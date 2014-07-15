@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Smart-image-renamer by ronakg</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Smart-image-renamer</h1>
+        <p>A script to intelligently bulk rename images using EXIF data contained within.</p>
+
+        <p class="view"><a href="https://github.com/ronakg/smart-image-renamer">View the Project on GitHub <small>ronakg/smart-image-renamer</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/ronakg/smart-image-renamer/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/ronakg/smart-image-renamer/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/ronakg/smart-image-renamer">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1></h1>
+
+<h1>
+<a name="smart-image-renamer" class="anchor" href="#smart-image-renamer"><span class="octicon octicon-link"></span></a>smart-image-renamer</h1>
+
+<p>A script to intelligently bulk rename images using EXIF data contained within</p>
+
+<p>.. image:: <a href="https://travis-ci.org/ronakg/smart-image-renamer.svg?branch=master">https://travis-ci.org/ronakg/smart-image-renamer.svg?branch=master</a>
+   :alt: Current build status
+   :target: <a href="http://travis-ci.org/#!/ronakg/smart-image-renamer">http://travis-ci.org/#!/ronakg/smart-image-renamer</a></p>
+
+<h1>
+<a name="install" class="anchor" href="#install"><span class="octicon octicon-link"></span></a>Install</h1>
+
+<p>To install smart-image-renamer:</p>
+
+<p>Recommended method is via pip.</p>
+
+<p>::</p>
+
+<p>pip install smart-image-renamer</p>
+
+<p>Else install like any other python package.</p>
+
+<p>::</p>
+
+<p>python setup.py install</p>
+
+<h1>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h1>
+
+<p>::</p>
+
+<p>usage: smart-image-renamer.py [-h] -f FORMAT [-s SEQUENCE] [-r] [-i] [-t] [-V]
+                              [-v | -q]
+                              input [input ...]</p>
+
+<p>Smart Image Renamer</p>
+
+<p>Rename your photos in bulk using information stored in EXIF.</p>
+
+<p>positional arguments:
+    input          Absolute path to file or directory</p>
+
+<p>optional arguments:
+    -h, --help     show this help message and exit
+    -f FORMAT      Format of the new file name
+    -s SEQUENCE    Starting sequence number (default: 1)
+    -r             Recursive mode
+    -i             Include hidden files
+    -t             Test mode. Don't apply changes.
+    -V, --version  show program's version number and exit
+    -v, --verbose
+    -q, --quiet</p>
+
+<p>Format string for the file name is defined by a mix of custom text and following tags enclosed in {}:
+    YYYY        Year
+    MM          Month
+    DD          Day
+    hh          Hours
+    mm          Minutes
+    ss          Seconds
+    Seq         Sequence number
+    Artist      Artist
+    Make        Camera Make
+    Model       Camera Model
+    Folder      Parent folder of the image file</p>
+
+<p>Examples:
+    Format String:          {YYYY}-{MM}-{DD}-{Folder}-{Seq}
+    File Name:              2014-05-09-Wedding_Shoot-001.JPEG
+                            2014-05-09-Wedding_Shoot-002.JPEG</p>
+
+<pre><code>Format String:          {YYYY}{DD}{MM}_{Model}_Beach_Shoot_{Seq}
+File Name:              20140429_PENTAX K-x_Beach_Shoot_001.JPEG
+                        20140429_PENTAX K-x_Beach_Shoot_002.JPEG
+</code></pre>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/ronakg">ronakg</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
